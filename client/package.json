@@ -68,6 +68,13 @@
         "language": "graphql",
         "path": "./syntaxes/graphql.json",
         "scopeName": "source.graphql"
+      },
+      {
+        "scopeName": "text.mxyzptlk",
+        "path": "./syntaxes/gql-query.json",
+        "injectTo": [
+          "source.graphql"
+        ]
       }
     ],
     "snippets": [
