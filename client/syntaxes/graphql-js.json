@@ -23,34 +23,9 @@
 			"patterns": [
 				{
 					"include": "source.graphql"
-				},
-				{
-					"include": "#template-substitution-element"
 				}
 			]
 		}
 	],
-	"scopeName": "source.graphql-js",
-	"repository": {
-		"template-substitution-element": {
-			"name": "meta.template.expression.js",
-			"begin": "\\$\\{",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.template-expression.begin.js"
-				}
-			},
-			"end": "\\}",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.template-expression.end.js"
-				}
-			},
-			"patterns": [
-				{
-					"include": "source.js"
-				}
-			]
-		}
-	}
+	"scopeName": "source.graphql-js"
 }

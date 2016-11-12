@@ -13,6 +13,7 @@
     {"include" : "#directive"},
     {"include" : "#arguments"},
     {"include" : "#selections"},
+    {"include" : "#template-substitution-element"},
     {
       "name": "meta.fragment.graphql",
       "comment": "a fragment definintion",
@@ -47,6 +48,26 @@
     }
   ],
   "repository": {
+		"template-substitution-element": {
+			"name": "meta.template.expression.js",
+			"begin": "\\$\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.template-expression.begin.js"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.template-expression.end.js"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.js"
+				}
+			]
+		},
     "string": {
       "name": "string.quoted.double.graphql",
       "begin": "\"",
@@ -147,7 +168,10 @@
         },
         "3": {
           "name": "entity.name.type.graphql"
-        }
+        },
+        "patterns": [
+            {"include": "#template-substitution-element"}
+        ]
       }
     },
     "arguments": {
@@ -226,7 +250,8 @@
         {"include": "#builtInField"},
         {"include": "#arguments"},
         {"include": "#enum"},
-        {"include": "#comment"}
+        {"include": "#comment"},
+        {"include": "#template-substitution-element"}
       ]
     },
     "comment": {
