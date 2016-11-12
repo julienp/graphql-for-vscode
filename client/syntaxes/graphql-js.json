@@ -1,0 +1,56 @@
+{
+	"fileTypes": ["js", "jsx", "ts", "tsx"],
+	"injectionSelector": "L:source",
+	"patterns": [
+		{
+			"begin": "(Relay\\.QL|gql)(`)",
+			"name": "graphql",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.tagged-template.js"
+				},
+				"2": {
+					"name": "punctuation.definition.string.template.begin.js"
+				}
+
+			},
+			"end": "`",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.template.end.js"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.graphql"
+				},
+				{
+					"include": "#template-substitution-element"
+				}
+			]
+		}
+	],
+	"scopeName": "source.graphql-js",
+	"repository": {
+		"template-substitution-element": {
+			"name": "meta.template.expression.js",
+			"begin": "\\$\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.template-expression.begin.js"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.template-expression.end.js"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.js"
+				}
+			]
+		}
+	}
+}

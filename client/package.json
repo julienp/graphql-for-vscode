@@ -68,7 +68,13 @@
         "language": "graphql",
         "path": "./syntaxes/graphql.json",
         "scopeName": "source.graphql"
+      },
+      {
+        "path": "./syntaxes/graphql-js.json",
+        "scopeName": "source.graphql-js",
+        "injectTo": ["source.js", "source.ts", "source.jsx", "source.tsx"]
       }
+
     ],
     "snippets": [
       {
